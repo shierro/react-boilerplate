@@ -1,5 +1,8 @@
+import useStyles from './styles';
+
 const Footer: React.FC = () => {
-  return <div>Footer</div>;
+  const { root } = useStyles();
+  return <div className={root}>Footer</div>;
 };
 
 export default Footer;
