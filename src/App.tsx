@@ -1,25 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
 import './App.css';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import HomePage from './containers/HomePage';
+
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <Header />
-      <div className="body">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </div>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <HelmetProvider>
+        <Helmet>
+          <meta name="description" content="Default metadata" />
+        </Helmet>
+        <div className="App">
+          <Header />
+          <Switch>
+            <Route path={(process.env.PUBLIC_URL || '') + '/'} component={HomePage} />
+          </Switch>
+          <Footer />
+        </div>
+      </HelmetProvider>
+    </BrowserRouter>
   );
 };
 

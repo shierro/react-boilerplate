@@ -1,6 +1,6 @@
 {
   "name": "few-boilerplate-fe",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.2",
@@ -10,19 +10,22 @@
     "@testing-library/user-event": "^12.1.10",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-helmet-async": "^1.0.7",
     "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "typescript": "^4.1.3",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:prod": "http-server build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "pretty:check": "prettier --check .",
-    "pretty:fix": "prettier --write ."
+    "pretty:check": "prettier --check . --ignore-path=.eslintignore",
+    "pretty:fix": "prettier --write . --ignore-path=.eslintignore"
   },
   "eslintConfig": {
     "extends": [
@@ -48,11 +51,13 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-redux": "^7.1.15",
+    "@types/react-router-dom": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
     "eslint": "^7.17.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-prettier": "^3.3.1",
+    "http-server": "^0.12.3",
     "pre-commit": "^1.2.2",
     "prettier": "^2.2.1"
   },
